@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('price');
             $table->bigInteger('category_id')->index()->unsigned();
             $table->string('description');
-            $table->binary('image');
+            $table->string('image');
             $table->timestamps();
         });
     }
