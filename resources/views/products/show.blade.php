@@ -1,4 +1,4 @@
-
+@dump($products)
 @foreach($products as $product)
     <div>
         <p>{{$product->title}}</p>
