@@ -41,7 +41,7 @@ class ProductsSeeder extends Seeder
             "price" => "3.29",
             "category_id" => "2",
             "description" => "cool men silver ring",
-            "image" => "resources\images\controller1.jpg"
+            "image" => 'resources\images\ring1.jpg'
         ],
     ]);
     }
