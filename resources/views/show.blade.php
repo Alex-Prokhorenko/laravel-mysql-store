@@ -1,3 +1,5 @@
+@extends('layouts.main')
+@section('content')
 @foreach($products as $product)
     <div>
         <p>{{$product->title}}</p>
@@ -6,3 +8,4 @@
         <p>{{$product->description}}</p>
      </div>
 @endforeach
+@endsection
