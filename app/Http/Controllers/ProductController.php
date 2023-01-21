@@ -18,9 +18,11 @@ class ProductController extends Controller
         return view('show_single', ['product' => $product]);
     }
 
-    public function add_product(Request $requst) {
+    public function add_product() {
         return view('add_product');
     }
 
-
+    public function show_adding_result(Request $request) {
+        return view('form_data_result', ['request' => $request]);
+    }
 }
