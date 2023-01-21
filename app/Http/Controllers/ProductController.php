@@ -17,4 +17,10 @@ class ProductController extends Controller
         $product = Product::find($id);
         return view('show_single', ['product' => $product]);
     }
+
+    public function add_product(Request $requst) {
+        return view('add_product');
+    }
+
+
 }
