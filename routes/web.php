@@ -19,7 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/products', [ProductController::class, 'show']);
-Route::get('/products/{id}', [ProductController::class, 'show_single']);
-Route::get('/add_product', [ProductController::class, 'add_product']);
-Route::post('/form_data_result', [ProductController::class, 'show_adding_result']);
+Route::get('/products/{id}', [ProductController::class, 'show_single'])->where('id', '[0-9]+');
+Route::match(['get', 'post'],'/products/create', [ProductController::class, 'create']);
 

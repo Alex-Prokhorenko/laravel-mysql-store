@@ -1,9 +1,9 @@
-<form action="/public/form_data_result" method="post">
+<form action="" method="POST">
     @csrf
     <label>Title:<input name="title"/></label>
     <label>Price<input name="price"/></label>
+    <label>Category<input name="category_id"/></label>
     <label>Description<input name="description"/></label>
     <label>Image<input name="image"/></label>
-    <label>Category<input name="category"/></label>
     <input type="submit"/>
 </form>
