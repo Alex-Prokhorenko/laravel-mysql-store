@@ -1,7 +1,6 @@
 body {
     background-color: #2d3748;
 }
-
 .img_container {
     height: 250px;
     overflow: hidden;
@@ -21,8 +20,40 @@ main {
     align-items: center;
 
     width: 300px;
-    /*border: 1px solid black;*/
     margin: 1em 0.5em;
     padding: 0.3em;
     background-color: ivory;
+}
+
+.create {
+    min-width: 80%;
+    background-color: ivory;
+    padding: 1em;
+    list-style: none;
+}
+
+.form-row {
+    display: flex;
+    padding: .5em;
+}
+
+.form-row > label {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+}
+
+.form-row > input {
+    flex: 3;
+}
+
+.form-row > input,
+.form-row > input[type=submit] {
+    padding: .5em;
+}
+
+.form-row > input[type=submit] {
+    background: darkgreen;
+    color: white;
+    border: 0;
+    font-size: 1.1em;
 }

@@ -28,6 +28,7 @@ class ProductController extends Controller
             dump($data);
             Product::create($data);
         }
+
         return view('add_product');
     }
 
