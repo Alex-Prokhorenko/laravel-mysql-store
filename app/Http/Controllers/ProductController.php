@@ -8,16 +8,16 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function show()
+    public function index()
     {
         $products = Product::all();
-        return view('show', ['products' => $products]);
+        return view('products.index', compact('products'));
     }
 
-    public function show_single($id)
+    public function show(Product $product)
     {
-        $product = Product::find($id);
-        return view('show_single', ['product' => $product]);
+        //dd($product);
+        return view('products.show', compact('product'));
     }
 
     public function create(Request $request)
@@ -29,8 +29,22 @@ class ProductController extends Controller
             Product::create($data);
         }
 
-        return view('add_product');
+        return view('products.create');
     }
+
+    public function store()
+    {
+        $data = request()->validate([
+            'title' => 'string',
+            'price' => 'integer',
+            'category_id' => 'integer',
+            'description' => 'string',
+            'image' => 'string',
+        ]);
+        Product::create($data);
+        return redirect()->route('products.index');
+    }
+
     public function update()
     {
         $product = Product::find(8);
