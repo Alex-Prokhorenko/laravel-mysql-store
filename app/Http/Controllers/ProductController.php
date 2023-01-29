@@ -44,5 +44,9 @@ class ProductController extends Controller
             ]);
         dd('updated');
     }
-
+    public function delete() {
+        $product = Product::find(4);
+        $product->delete();
+        dd('deleted');
+    }
 }
