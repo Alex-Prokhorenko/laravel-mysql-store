@@ -31,5 +31,18 @@ class ProductController extends Controller
 
         return view('add_product');
     }
+    public function update()
+    {
+        $product = Product::find(8);
+        $product->update(
+            [
+                'title' => 'updated',
+                'price' => 0,
+                'category_id' => 1,
+                'description' => 'updated',
+                'image' => 'updated',
+            ]);
+        dd('updated');
+    }
 
 }

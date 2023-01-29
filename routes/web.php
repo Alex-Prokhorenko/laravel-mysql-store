@@ -21,4 +21,5 @@ Route::get('/', function () {
 Route::get('/products', [ProductController::class, 'show']);
 Route::get('/products/{id}', [ProductController::class, 'show_single'])->where('id', '[0-9]+');
 Route::match(['get', 'post'],'/products/create', [ProductController::class, 'create']);
+Route::match(['get', 'post'],'/products/update', [ProductController::class, 'update']);
 
