@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <div class="create">
-        <form action="" method="POST">
+        <form action="{{ route('products.store') }}" method="POST">
             @csrf
             <ul>
                 <li class="form-row">
