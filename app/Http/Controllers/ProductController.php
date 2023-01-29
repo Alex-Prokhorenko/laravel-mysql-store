@@ -45,6 +45,10 @@ class ProductController extends Controller
         return redirect()->route('products.index');
     }
 
+    public function edit(Product $product)
+    {
+        return view('post.edit', compact($product));
+    }
     public function update()
     {
         $product = Product::find(8);
