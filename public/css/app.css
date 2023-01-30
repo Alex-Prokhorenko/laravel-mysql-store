@@ -42,9 +42,10 @@ main {
     flex: 1;
 }
 
-.form-row > input {
+.form-row > input, select {
     flex: 3;
 }
+
 
 .form-row > input,
 .form-row > input[type=submit] {

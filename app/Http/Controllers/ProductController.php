@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
@@ -22,6 +23,8 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
+        $categories = Category::all();
+
         if ($request->has('title') && $request->has('price') && $request->has('description')
             && $request->has('image') && $request->has('category_id')) {
             $data = $request->except('_token');
@@ -29,7 +32,7 @@ class ProductController extends Controller
             Product::create($data);
         }
 
-        return view('products.create');
+        return view('products.create', compact('categories'));
     }
 
     public function store()

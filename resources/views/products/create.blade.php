@@ -13,8 +13,12 @@
                     <input id="price" name="price" type="text" required/>
                 </li>
                 <li class="form-row">
-                    <label for="category_id">Enter category:</label>
-                    <input id="category_id" name="category_id" type="text" required/>
+                    <label for="category_id">Select a category:</label>
+                    <select id="category_id" name="category_id">
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->category }}</option>
+                        @endforeach
+                    </select>
                 </li>
                 <li class="form-row">
                     <label for="description">Enter description:</label>
