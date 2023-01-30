@@ -38,10 +38,10 @@ class ProductController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'title' => 'string',
-            'price' => 'integer',
-            'category_id' => 'integer',
-            'description' => 'string',
+            'title' => 'required|string',
+            'price' => 'required|integer',
+            'category_id' => 'required|integer',
+            'description' => 'required|string',
             'image' => 'string',
         ]);
         Product::create($data);
