@@ -17,11 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->integer('price');
-            $table->bigInteger('category_id')->index()->unsigned();
             $table->string('description');
             $table->string('image');
             $table->timestamps();
             $table->softDeletes();
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->index('category_id', 'product_category_idx');
+            $table->foreign('category_id', 'post_category_fk')->on('categories')->references('id');
         });
     }
 
