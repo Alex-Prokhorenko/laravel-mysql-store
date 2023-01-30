@@ -22,7 +22,7 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
-        if($request->has('title') && $request->has('price') && $request->has('description')
+        if ($request->has('title') && $request->has('price') && $request->has('description')
             && $request->has('image') && $request->has('category_id')) {
             $data = $request->except('_token');
             dump($data);
@@ -47,24 +47,25 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('post.edit', compact($product));
+        return view('products.edit', compact('product'));
     }
-    public function update()
+
+    public function update(Product $product)
     {
-        $product = Product::find(8);
-        $product->update(
-            [
-                'title' => 'updated',
-                'price' => 0,
-                'category_id' => 1,
-                'description' => 'updated',
-                'image' => 'updated',
-            ]);
-        dd('updated');
+        $data = request()->validate([
+            'title' => 'string',
+            'price' => 'integer',
+            'category_id' => 'integer',
+            'description' => 'string',
+            'image' => 'string',
+        ]);
+        $product->update($data);
+        return redirect()->route('products.show', $product->id);
     }
-    public function delete() {
-        $product = Product::find(4);
+
+    public function destroy(Product $product)
+    {
         $product->delete();
-        dd('deleted');
+        return redirect()->route('products.index');
     }
 }
