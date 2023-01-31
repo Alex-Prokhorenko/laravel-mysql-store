@@ -11,8 +11,8 @@ class Service
         Product::create($data);
     }
 
-    public function update()
+    public function update($product, $data)
     {
-
+        $product->update($data);
     }
 }
