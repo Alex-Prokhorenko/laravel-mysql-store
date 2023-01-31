@@ -1,7 +1,14 @@
 <?php
 
+
+use App\Http\Controllers\Product\CreateController;
+use App\Http\Controllers\Product\DeleteController;
+use App\Http\Controllers\Product\EditController;
+use App\Http\Controllers\Product\IndexController;
+use App\Http\Controllers\Product\ShowController;
+use App\Http\Controllers\Product\StoreController;
+use App\Http\Controllers\Product\UpdateController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,17 +24,24 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['namespase'=> 'Product'], function() {
+    Route::get('/products', IndexController::class)->name('products.index');
+    Route::get('/products/create', CreateController::class)->name('products.create');
+    Route::post('/products', StoreController::class)->name('products.store');
+    Route::get('/products/{product}', ShowController::class)->where('id', '[0-9]+')
+        ->name('products.show');
+    Route::get('/products/{product}/edit', EditController::class)->name('products.edit');
+    Route::patch('/products/{product}', UpdateController::class)->name('products.update');
+    Route::delete('/products/{product}', DeleteController::class)->name('products.delete');
+});
 
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 
-Route::post('/products', [ProductController::class, 'store'])->name('products.store');
-Route::get('/products/{product}', [ProductController::class, 'show'])
-    ->where('id', '[0-9]+')->name('products.show');
-Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
-Route::patch('/products/{product}', [ProductController::class, 'update'])->name('products.update');
 
-Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.delete');
+
+
+
+
+
 
 
 
