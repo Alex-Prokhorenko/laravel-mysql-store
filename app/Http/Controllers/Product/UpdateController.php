@@ -3,19 +3,14 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Product\UpdateRequest;
 use App\Models\Product;
 
 class UpdateController extends Controller
 {
-    public function __invoke(Product $product)
+    public function __invoke(UpdateRequest $request, Product $product)
     {
-        $data = request()->validate([
-            'title' => 'string',
-            'price' => 'integer',
-            'category_id' => 'integer',
-            'description' => 'string',
-            'image' => 'string',
-        ]);
+        $data = $request->validated();
         $product->update($data);
         return redirect()->route('products.show', $product->id);
     }
