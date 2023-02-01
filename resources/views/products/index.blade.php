@@ -1,9 +1,6 @@
 @extends('...layouts.main')
 @section('content')
     <div>
-        <div>
-            <a href="{{ route('products.create') }}">Add one</a>
-        </div>
         @foreach($products as $product)
             <div class="product">
                 <p>{{$product->title}}</p>
