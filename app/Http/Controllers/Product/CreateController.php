@@ -15,7 +15,6 @@ class CreateController extends BaseController
         if ($request->has('title') && $request->has('price') && $request->has('description')
             && $request->has('image') && $request->has('category_id')) {
             $data = $request->except('_token');
-            dump($data);
             Product::create($data);
         }
 
