@@ -1,11 +1,11 @@
 @extends('...layouts.main')
 @section('content')
     <div>
-        <a href="{{ route('products.create') }}">Add one</a>
-    </div>
-    <div class="product">
+        <div>
+            <a href="{{ route('products.create') }}">Add one</a>
+        </div>
         @foreach($products as $product)
-            <div >
+            <div class="product">
                 <p>{{$product->title}}</p>
 
                 <div class="img_container">
@@ -18,5 +18,9 @@
                 <a href="{{ route('products.show', $product->id) }}">Show</a>
             </div>
         @endforeach
+
+        <div>
+            {{ $products->links() }}
+        </div>
     </div>
 @endsection
