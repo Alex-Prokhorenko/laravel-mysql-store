@@ -234,7 +234,7 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-
+                @yield('content')
             </div><!-- /.container-fluid -->
         </section>
         <!-- /.content -->
@@ -287,9 +287,7 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 </body>
 </html>
 
