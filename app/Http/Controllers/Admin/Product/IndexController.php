@@ -9,6 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        return view('admin.product.index');
+        $products = Product::paginate(10);
+        return view('admin.product.index', compact('products'));
     }
 }

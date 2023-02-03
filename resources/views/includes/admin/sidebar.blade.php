@@ -2,11 +2,11 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-header">ADMIN PANEL</li>
         <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
+            <a href="{{ route('admin.product.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-regular fa-bars"></i>
                 <p>
-                    Calendar
-                    <span class="badge badge-info right">2</span>
+                    Products
+                    <span class="badge badge-info right">{{ $products->total() }}</span>
                 </p>
             </a>
         </li>
