@@ -1,13 +1,7 @@
 <?php
 
-
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\Product\CreateController;
-use App\Http\Controllers\Product\DeleteController;
-use App\Http\Controllers\Product\EditController;
-use App\Http\Controllers\Product\ShowController;
-use App\Http\Controllers\Product\StoreController;
-use App\Http\Controllers\Product\UpdateController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::group(['namespace' => 'App\Http\Controllers\Product'], function() {
     Route::get('/products', 'IndexController')->name('products.index');
     Route::get('/products/create', 'CreateController')->name('products.create');
@@ -45,14 +40,16 @@ Route::prefix('admin')->namespace('App\Http\Controllers\Admin\product')->name('a
 
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-
-
-
-
-
-
-
+require __DIR__.'/auth.php';
 
 
