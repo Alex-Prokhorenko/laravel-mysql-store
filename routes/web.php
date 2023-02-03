@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
-Route::group(['namespace' => 'App\Http\Controllers\Product'], function() {
+Route::group(['namespace' => 'App\Http\Controllers\Product'], function () {
     Route::get('/products', 'IndexController')->name('products.index');
     Route::get('/products/create', 'CreateController')->name('products.create');
     Route::post('/products', 'StoreController')->name('products.store');
@@ -30,11 +30,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Product'], function() {
     Route::delete('/products/{product}', 'DeleteController')->name('products.delete');
 });
 
+Route::get('/', MainController::class)->name('main.index');
 
-Route::get('/main', MainController::class)->name('main.index');
-
-
-Route::prefix('admin')->namespace('App\Http\Controllers\Admin\product')->name('admin.')->group(function() {
+Route::prefix('admin')->namespace('App\Http\Controllers\Admin\product')->middleware('admin')->name('admin.')->group(function () {
 
     Route::get('/product', 'IndexController')->name('product.index');
 
@@ -50,6 +48,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 
