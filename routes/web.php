@@ -38,6 +38,9 @@ Route::prefix('admin')->namespace('App\Http\Controllers\Admin\product')->middlew
     Route::post('/products', 'StoreController')->name('products.store');
     Route::get('/products/{product}', 'ShowController')->where('id', '[0-9]+')
         ->name('products.show');
+    Route::get('/products/{product}/edit', 'EditController')->name('products.edit');
+    Route::patch('/products/{product}', 'UpdateController')->name('products.update');
+    Route::delete('/products/{product}', 'DeleteController')->name('products.delete');
 });
 
 Route::get('/dashboard', function () {

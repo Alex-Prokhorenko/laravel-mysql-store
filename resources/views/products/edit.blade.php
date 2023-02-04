@@ -1,7 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 @section('content')
     <div class="container">
-        <form action="{{ route('products.update', $product) }}" method="POST">
+        <form action="{{ route('admin.products.update', $product) }}" method="POST">
             @csrf
             @method('patch')
             <div class="mb-3">
