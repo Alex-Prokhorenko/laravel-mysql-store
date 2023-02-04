@@ -6,7 +6,7 @@
         <img src="{{asset('../' . $product->image)}}" alt="{{asset($product->image)}}" width="300"/>
         <p>{{$product->description}}</p>
         <a href="{{ route('admin.products.edit', $product->id) }}">Edit</a>
-        <form action="{{ route('products.delete', $product->id) }}" method="POST">
+        <form action="{{ route('admin.products.delete', $product->id) }}" method="POST">
             @csrf
             @method('delete')
             <input type="submit" value="Delete">
