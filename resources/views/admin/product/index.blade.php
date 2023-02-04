@@ -12,7 +12,7 @@
                 <div>
                     <p>{{$product->description}}</p>
                 </div>
-                <a href="{{ route('products.show', $product->id) }}">Show</a>
+                <a href="{{ route('admin.products.show', $product->id, $products) }}">Show</a>
             </div>
         @endforeach
 

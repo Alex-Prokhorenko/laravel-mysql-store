@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 @section('content')
     <div class="product">
         <p>{{$product->title}}</p>
@@ -11,6 +11,6 @@
             @method('delete')
             <input type="submit" value="Delete">
         </form>
-        <a href="{{ route('products.index') }}">Back</a>
+        <a href="{{ route('admin.product.index') }}">Back</a>
     </div>
 @endsection
