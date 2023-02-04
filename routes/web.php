@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\MainController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +30,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Product'], function () {
     Route::delete('/products/{product}', 'DeleteController')->name('products.delete');
 });
 
-Route::get('/', MainController::class)->name('main.index');
+Route::get('/', HomeController::class)->name('home.index');
 
 Route::prefix('admin')->namespace('App\Http\Controllers\Admin\product')->middleware('admin')->name('admin.')->group(function () {
     Route::get('/product', 'IndexController')->name('product.index');
