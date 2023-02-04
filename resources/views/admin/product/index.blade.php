@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('content')
     <div>
         @foreach($products as $product)

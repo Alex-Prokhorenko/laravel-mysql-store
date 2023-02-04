@@ -35,7 +35,8 @@ Route::get('/', MainController::class)->name('main.index');
 Route::prefix('admin')->namespace('App\Http\Controllers\Admin\product')->middleware('admin')->name('admin.')->group(function () {
 
     Route::get('/product', 'IndexController')->name('product.index');
-
+    Route::get('/products/create', 'CreateController')->name('products.create');
+    Route::post('/products', 'StoreController')->name('products.store');
 });
 
 Route::get('/dashboard', function () {

@@ -6,9 +6,17 @@
                 <i class="nav-icon fas fa-regular fa-bars"></i>
                 <p>
                     Products
-                    <span class="badge badge-info right">{{ $products->total() }}</span>
+                    <span class="badge badge-info right">{{ count($products) }}</span>
                 </p>
             </a>
+            <a href="{{ route('admin.products.create') }}" class="nav-link">
+                <i class="nav-icon fas fa-duotone fa-plus"></i>
+
+                <p>
+                    Add Product
+                </p>
+            </a>
+
         </li>
     </ul>
 </nav>

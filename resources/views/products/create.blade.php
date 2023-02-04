@@ -1,7 +1,7 @@
-<@extends('layouts.main')
+@extends('layouts.admin')
 @section('content')
     <div class="container">
-        <form action="{{ route('products.store') }}" method="POST">
+        <form action="{{ route('admin.products.store') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Enter title: </label>
@@ -54,4 +54,4 @@
         </form>
     </div>
 @endsection
->
+
