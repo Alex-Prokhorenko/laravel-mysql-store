@@ -42,17 +42,26 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="index3.html" class="nav-link">Home</a>
+                <a href="{{ route('home.index') }}" class="nav-link">Home</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contact</a>
+                <a class="nav-link" href="#">Docs</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a class="nav-link" href="https://github.com/Alex-Prokhorenko/laravel-mysql-store">GitHub</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a class="nav-link" href="{{ route('products.index') }}">Products</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a class="nav-link" href="{{ route('login') }}">Dashboard</a>
             </li>
         </ul>
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
             <!-- Navbar Search -->
-            <li class="nav-item">
+            {{--<li class="nav-item">
                 <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                     <i class="fas fa-search"></i>
                 </a>
@@ -158,7 +167,7 @@
                     <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item">--}}
                 <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                     <i class="fas fa-expand-arrows-alt"></i>
                 </a>
@@ -188,7 +197,7 @@
                     <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Alexander Pierce</a>
+                    <a href="#" class="d-block">Alexander</a>
                 </div>
             </div>
 

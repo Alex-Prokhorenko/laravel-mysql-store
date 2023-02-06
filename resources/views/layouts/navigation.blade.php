@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <div class="p-6 text-blue-900">
+                        <a href="<?php echo e(route('home.index')); ?>">Home</a>
+                    </div>
                 </div>
             </div>
 
