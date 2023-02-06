@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Product;
 
+use App\Http\Resources\Product\ProductResource;
 use App\Models\Product;
 
 class DeleteController extends BaseController
@@ -9,6 +10,7 @@ class DeleteController extends BaseController
     public function __invoke(Product $product)
     {
         $product->delete();
-        return redirect()->route('products.index');
+        return new ProductResource($product);
+        //return redirect()->route('products.index');
     }
 }
