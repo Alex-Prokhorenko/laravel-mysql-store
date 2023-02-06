@@ -21,11 +21,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'App\Http\Controllers\Product'], function () {
     Route::get('/products', 'IndexController')->name('products.index');
-    Route::get('/products/create', 'CreateController')->name('products.create');
     Route::post('/products', 'StoreController')->name('products.store');
     Route::get('/products/{product}', 'ShowController')->where('id', '[0-9]+')
         ->name('products.show');
-    Route::get('/products/{product}/edit', 'EditController')->name('products.edit');
     Route::patch('/products/{product}', 'UpdateController')->name('products.update');
     Route::delete('/products/{product}', 'DeleteController')->name('products.delete');
 });
