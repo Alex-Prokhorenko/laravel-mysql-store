@@ -8,11 +8,12 @@ class Service
 {
     public function store($data)
     {
-        Product::create($data);
+        return Product::create($data);
     }
 
     public function update($product, $data)
     {
         $product->update($data);
+        return $product->fresh();
     }
 }
