@@ -17,7 +17,32 @@ class ProductsSeeder extends Seeder
     public function run()
     {
         DB::table('products')->insert([
-
+            [
+                "title" => "Mens Hoodie Jacket",
+                "price" => "36.71",
+                "category_id" => "3",
+                "description" => "Mens Heavy Fleece Lined Sherpa Hoodie Plaid Flannel Jacket Hood Coat Sweatshirt",
+                "image" => "public\images\products\jacket1.jpg"],
+            [
+                "title" => "Black Men's Jeans",
+                "price" => "26.99",
+                "category_id" => "3",
+                "description" => "Men's Ripped Skinny Jeans Stretch Trousers Casual Slim Daily Chic Denim Pants",
+                "image" => "public\images\products\jeans1.jpg"],
+            [
+                "title" => "Women's Summer Dress",
+                "price" => "19.90",
+                "category_id" => "4",
+                "description" => "Women's Summer Dress Casual Belt Vintage Retro 50s Short Sleeve Dotted",
+                "image" => "public\images\products\dress1.jpg"
+            ],
+            [
+                "title" => "Men's Rings",
+                "price" => "3.29",
+                "category_id" => "2",
+                "description" => "Men's Retro Stainless Steel Vintage Crystal Rhinestone Army Military Rings",
+                "image" => 'public\images\products\ring1.jpg'
+            ],
             [
                 "title" => "OEM PlayStation 2 PS2 Clear Ocean Blue Controller DualShock 2 SCPH-10010",
                 "price" => "29",
