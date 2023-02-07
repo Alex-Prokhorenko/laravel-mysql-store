@@ -9,7 +9,7 @@ class ShowController extends BaseController
 {
     public function __invoke(Product $product)
     {
-        $products = Product::all();
+        $products = Product::paginate();
 
         return view('products.show', compact('product', 'products'));
     }

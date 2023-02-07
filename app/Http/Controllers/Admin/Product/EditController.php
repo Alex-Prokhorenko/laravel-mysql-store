@@ -10,7 +10,7 @@ class EditController extends BaseController
 {
     public function __invoke(Product $product)
     {
-        $products = Product::all();
+        $products = Product::paginate();
         $categories = Category::all();
         return view('products.edit', compact('product', 'categories', 'products'));
     }
