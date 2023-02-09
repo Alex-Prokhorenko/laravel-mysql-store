@@ -9,8 +9,9 @@ class DeleteController extends BaseController
 {
     public function __invoke(Product $product)
     {
-        $product->delete();
-        return new ProductResource($product);
+        return $product;
+        /*$product->delete();
+        return new ProductResource($product);*/
         //return redirect()->route('products.index');
     }
 }
