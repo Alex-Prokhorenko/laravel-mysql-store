@@ -7,7 +7,7 @@
             <p class="lead mb-4">Fake store rest API created using Laravel the php framework for training requests to the server</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <a href="https://github.com/Alex-Prokhorenko/laravel-mysql-store"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">View on GitHub</button></a>
-                <a href=""><button type="button" class="btn btn-outline-secondary btn-lg px-4">Documentation</button></a>
+                <a href="{{ route('show.docs') }}"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Documentation</button></a>
             </div>
         </div>
     </div>

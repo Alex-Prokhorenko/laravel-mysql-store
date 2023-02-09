@@ -30,6 +30,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Product'], function () {
 
 Route::get('/', HomeController::class)->name('home.index');
 
+Route::get('/docs', function() {
+    return view('docs');
+})->name('show.docs');
+
 Route::prefix('admin')->namespace('App\Http\Controllers\Admin\product')->middleware('admin')->name('admin.')->group(function () {
     Route::get('/product', 'IndexController')->name('product.index');
     Route::get('/products/create', 'CreateController')->name('products.create');

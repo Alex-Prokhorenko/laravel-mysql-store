@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Docs</a>
+                    <a class="nav-link" href="{{ route('show.docs') }}">Docs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/Alex-Prokhorenko/laravel-mysql-store">GitHub</a>
