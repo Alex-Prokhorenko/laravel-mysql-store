@@ -1,66 +1,88 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Fake Strore API
+____
+This project is for developing and testing frontend applications.  
+A server developed with the Laravel framework accepts HTTP requests and returns a json object as a response.  
+When sending the requests described in Methods section, no changes are made to the database.  
+But, I connected Admin Lte to the project. It implements the ability to interact with the database using forms.  
+The panel displays a list of product cards. Each card can be viewed, edited or deleted.  
+Also project contains migrations and seeders for creating and filling database.
+## Methods:
+____
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Get all products
 
-## About Laravel
+### Method: GET  
+`http://fakestoreapi.ru/products`
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Get all products with options
+Method: GET  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Limit number of products on current page  
+`http://laravel.store/public/products/?per_page=2`  
+You can also choose the page to display  
+`http://laravel.store/public/products/?per_page=2&page=2`
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+### Get a single product
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Method GET
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Put the product number at the end of the line  
+`https://fakestoreapi.ru/products/id`
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Create new product
 
-## Laravel Sponsors
+Method POST  
+`http://fakestoreapi.ru/products`  
+Send an object
+```
+{
+    'title' => 'test',
+    'price' => '10',
+    'category_id' => '1',
+    'description' => 'randomwords',
+    'image' => 'https://randomaddress/image',
+}
+```
+will response
+```
+{
+    'title' => 'test',
+    'price' => '10',
+    'category_id' => '1',
+    'description' => 'randomwords',
+    'image' => 'https://randomaddress/image',
+}
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Update a product
 
-### Premium Partners
+Method PATCH  
+`http://laravel.store/public/products/1`  
+Send an object to the address with id of the product being changed
+```
+{
+    'title' => 'test',
+    'price' => '10',
+    'category_id' => '1',
+    'description' => 'randomwords',
+    'image' => 'https://randomaddress/image',
+}
+```
+will response
+```
+{
+    'title' => 'test',
+    'price' => '10',
+    'category_id' => '1',
+    'description' => 'randomwords',
+    'image' => 'https://randomaddress/image',
+}
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
+### Delete a product
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Method DELETE  
+`https://fakestoreapi.ru/products/{id}`  
+Put the product number at the end of the line
