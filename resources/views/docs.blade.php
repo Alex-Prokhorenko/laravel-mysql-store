@@ -34,31 +34,33 @@ In case of deletion, the object with the specified id is returned.</pre>
                 <p>Method POST</p>
                 <code class="bg-light">http://fakestoreapi.ru/products</code>
                 <p class="mb-0">Send an object</p>
-                <pre class="bg-light">[
+                <pre class="bg-light">{
     'title' => 'required && string',
     'price' => 'required && integer',
     'category_id' => 'required && integer',
     'description' => 'required && string',
     'image' => 'string',
-]</pre>
+}</pre>
             </div>
             <div class="m-2 p-2 g-col-6 border-bottom border-secondary">
                 <h3>Update a product</h3>
                 <p>Method PATCH</p>
+                <code class="bg-light">http://laravel.store/public/products/{id}</code>
+                <p class="mb-0">Put the product updating number at the end of the line</p>
                 <p class="mb-0">Send an object</p>
-                <pre class="bg-light">[
+                <pre class="bg-light">{
     'title' => 'required && string',
     'price' => 'required && integer',
     'category_id' => 'required && integer',
     'description' => 'required && string',
     'image' => 'string',
-]</pre>
+}</pre>
             </div>
             <div class="m-2 p-2 g-col-6 border-bottom border-secondary">
                 <h3>Delete a product</h3>
                 <p>Method DELETE</p>
                 <code class="bg-light">https://fakestoreapi.ru/products/{id}</code>
-                <p class="mb-0">Put the product number at the end of the line</p>
+                <p class="mb-0">Put the deleting product number at the end of the line</p>
             </div>
 
         </div>
