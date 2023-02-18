@@ -26,8 +26,8 @@ In case of deletion, the object with the specified id is returned.</pre>
             <div class="m-2 p-2 g-6 border-bottom border-secondary">
                 <h3>Get a single product</h3>
                 <p>Method GET</p>
-                <p class="mb-0">Put the product number at the end of the line</p>
-                <code class="bg-light">https://fakestoreapi.ru/products/{id}</code>
+                <p class="mb-0">Place the product id at the end of the line</p>
+                <code class="bg-light">https://fakestoreapi.ru/products/1</code>
             </div>
             <div class="m-2 p-2 g-col-6 border-bottom border-secondary">
                 <h3>Create new product</h3>
@@ -35,32 +35,32 @@ In case of deletion, the object with the specified id is returned.</pre>
                 <code class="bg-light">http://fakestoreapi.ru/products</code>
                 <p class="mb-0">Send an object</p>
                 <pre class="bg-light">{
-    'title' => 'required && string',
-    'price' => 'required && integer',
-    'category_id' => 'required && integer',
-    'description' => 'required && string',
-    'image' => 'string',
+    'title' => 'test',
+    'price' => '10',
+    'category_id' => '1',
+    'description' => 'randomwords',
+    'image' => 'https://randomaddress/image'
 }</pre>
             </div>
             <div class="m-2 p-2 g-col-6 border-bottom border-secondary">
                 <h3>Update a product</h3>
                 <p>Method PATCH</p>
-                <code class="bg-light">http://laravel.store/public/products/{id}</code>
-                <p class="mb-0">Put the product updating number at the end of the line</p>
+                <code class="bg-light">http://laravel.store/public/products/1</code>
+                <p class="mb-0">Place the ID of the product to be updated at the end of the line.</p>
                 <p class="mb-0">Send an object</p>
                 <pre class="bg-light">{
-    'title' => 'required && string',
-    'price' => 'required && integer',
-    'category_id' => 'required && integer',
-    'description' => 'required && string',
-    'image' => 'string',
+    'title' => 'test',
+    'price' => '10',
+    'category_id' => '1',
+    'description' => 'randomwords',
+    'image' => 'https://randomaddress/image'
 }</pre>
             </div>
             <div class="m-2 p-2 g-col-6 border-bottom border-secondary">
                 <h3>Delete a product</h3>
                 <p>Method DELETE</p>
-                <code class="bg-light">https://fakestoreapi.ru/products/{id}</code>
-                <p class="mb-0">Put the deleting product number at the end of the line</p>
+                <code class="bg-light">https://fakestoreapi.ru/products/1</code>
+                <p class="mb-0">Place the ID of the product to be removed at the end of the line.</p>
             </div>
 
         </div>

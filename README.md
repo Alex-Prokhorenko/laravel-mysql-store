@@ -27,8 +27,8 @@ You can also choose the page to display
 
 Method GET
 
-Put the product number at the end of the line  
-`https://fakestoreapi.ru/products/id`
+Place the product id at the end of the line  
+`https://fakestoreapi.ru/products/1`
 
 ### Create new product
 
@@ -41,7 +41,7 @@ Send an object
     'price' => '10',
     'category_id' => '1',
     'description' => 'randomwords',
-    'image' => 'https://randomaddress/image',
+    'image' => 'https://randomaddress/image'
 }
 ```
 will response
@@ -51,7 +51,7 @@ will response
     'price' => '10',
     'category_id' => '1',
     'description' => 'randomwords',
-    'image' => 'https://randomaddress/image',
+    'image' => 'https://randomaddress/image'
 }
 ```
 
@@ -66,7 +66,7 @@ Send an object to the address with id of the product being changed
     'price' => '10',
     'category_id' => '1',
     'description' => 'randomwords',
-    'image' => 'https://randomaddress/image',
+    'image' => 'https://randomaddress/image'
 }
 ```
 will response
@@ -76,7 +76,7 @@ will response
     'price' => '10',
     'category_id' => '1',
     'description' => 'randomwords',
-    'image' => 'https://randomaddress/image',
+    'image' => 'https://randomaddress/image'
 }
 ```
 
@@ -84,5 +84,5 @@ will response
 ### Delete a product
 
 Method DELETE  
-`https://fakestoreapi.ru/products/{id}`  
-Put the product number at the end of the line
+`https://fakestoreapi.ru/products/1`  
+Place the product id at the end of the line
